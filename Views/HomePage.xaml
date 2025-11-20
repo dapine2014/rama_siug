@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<ContentPage
+    Title="SIUGJ"
+    x:Class="SIUGJ.Views.HomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout
+            BackgroundColor="{DynamicResource ColorFondo}"
+            HorizontalOptions="FillAndExpand"
+            Padding="15"
+            Spacing="20"
+            VerticalOptions="FillAndExpand">
+            <Grid Padding="10" VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="24"
+                    Grid.Row="0"
+                    TextColor="{DynamicResource ColorNegro}"
+                    x:Name="welcome" />
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    Grid.Row="1"
+                    Text="¿Sabes qué puedes hacer?"
+                    TextColor="{DynamicResource ColorPrimario}" />
+                <StackLayout
+                    Grid.Row="2"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <Grid Padding="10" VerticalOptions="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="170" />
+                            <RowDefinition Height="170" />
+                            <RowDefinition Height="170" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout
+                            ClassId="notifications"
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            VerticalOptions="Center">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnTapped" />
+                            </StackLayout.GestureRecognizers>
+                            <Frame
+                                CornerRadius="15"
+                                HasShadow="True"
+                                HeightRequest="150"
+                                Padding="5"
+                                VerticalOptions="Center">
+                                <StackLayout Padding="10" VerticalOptions="Center">
+                                    <Image Source="card_icon1.png" />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="13"
+                                        HorizontalTextAlignment="Center"
+                                        Text="Conoce las alertas de tus procesos"
+                                        TextColor="{DynamicResource ColorNegro}" />
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout
+                            ClassId="headquarters"
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            VerticalOptions="Center">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnTapped" />
+                            </StackLayout.GestureRecognizers>
+                            <Frame
+                                CornerRadius="15"
+                                HasShadow="True"
+                                HeightRequest="150"
+                                Padding="5"
+                                VerticalOptions="Center">
+                                <StackLayout Padding="10" VerticalOptions="Center">
+                                    <Image Source="card_icon2.png" />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="13"
+                                        HorizontalTextAlignment="Center"
+                                        Text="Ubica las Sedes Judiciales más cercanas a tí"
+                                        TextColor="{DynamicResource ColorNegro}" />
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout
+                            ClassId="hearings"
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            VerticalOptions="Center">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnTapped" />
+                            </StackLayout.GestureRecognizers>
+                            <Frame
+                                CornerRadius="15"
+                                HasShadow="True"
+                                HeightRequest="150"
+                                Padding="5"
+                                VerticalOptions="Center">
+                                <StackLayout Padding="10" VerticalOptions="Center">
+                                    <Image Source="card_icon3.png" />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="13"
+                                        HorizontalTextAlignment="Center"
+                                        Text="Verifica tus audiencias pendientes y únete a ellas"
+                                        TextColor="{DynamicResource ColorNegro}" />
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout
+                            ClassId="processes"
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            VerticalOptions="Center">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnTapped" />
+                            </StackLayout.GestureRecognizers>
+                            <Frame
+                                CornerRadius="15"
+                                HasShadow="True"
+                                HeightRequest="150"
+                                Padding="5"
+                                VerticalOptions="Center">
+                                <StackLayout Padding="10" VerticalOptions="Center">
+                                    <Image Source="card_icon4.png" />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontSize="13"
+                                        HorizontalTextAlignment="Center"
+                                        Text="Gestiona y consulta tus procesos judiciales"
+                                        TextColor="{DynamicResource ColorNegro}" />
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

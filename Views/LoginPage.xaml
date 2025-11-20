@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    BackgroundImageSource="bg_fondologin.png"
+    Shell.NavBarIsVisible="False"
+    mc:Ignorable="d"
+    x:Class="SIUGJ.Views.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout
+                HorizontalOptions="Start"
+                Margin="25,60,0,0"
+                VerticalOptions="Start">
+                <Image Source="logosiugj.png" WidthRequest="100" />
+            </StackLayout>
+            <StackLayout Padding="25" VerticalOptions="EndAndExpand">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="Subtitle"
+                    HorizontalOptions="Start"
+                    MaxLines="2"
+                    Padding="10"
+                    Text="Ingrese sus datos"
+                    TextColor="White"
+                    WidthRequest="200" />
+
+                <Entry
+                    BackgroundColor="Transparent"
+                    Keyboard="Email"
+                    Placeholder="Correo electrónico"
+                    PlaceholderColor="LightGray"
+                    Text="{Binding Email}"
+                    TextColor="White"
+                    x:Name="Email" />
+                <Entry
+                    BackgroundColor="Transparent"
+                    IsPassword="True"
+                    Placeholder="Contraseña"
+                    PlaceholderColor="LightGray"
+                    Text="{Binding Password}"
+                    TextColor="White"
+                    x:Name="Password" />
+                <Button
+                    Command="{Binding LoginCommand}"
+                    Text="Ingresar"
+                    VerticalOptions="Center" />
+            </StackLayout>
+            <StackLayout
+                Margin="0,0,0,100"
+                Padding="30"
+                VerticalOptions="EndAndExpand">
+                <Button
+                    BackgroundColor="Transparent"
+                    Command="{Binding ForgetPasswordCommand}"
+                    Text="Olvidé mi contraseña" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
