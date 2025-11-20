@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+
+		<!-- Familia de dispositivos: iPhone (1), iPad (2) -->
+		<key>UIDeviceFamily</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+		</array>
+
+		<!-- Orientaciones soportadas -->
+		<key>UISupportedInterfaceOrientations</key>
+		<array>
+			<string>UIInterfaceOrientationPortrait</string>
+			<string>UIInterfaceOrientationLandscapeLeft</string>
+			<string>UIInterfaceOrientationLandscapeRight</string>
+		</array>
+
+		<key>UISupportedInterfaceOrientations~ipad</key>
+		<array>
+			<string>UIInterfaceOrientationPortrait</string>
+			<string>UIInterfaceOrientationPortraitUpsideDown</string>
+			<string>UIInterfaceOrientationLandscapeLeft</string>
+			<string>UIInterfaceOrientationLandscapeRight</string>
+		</array>
+
+		<!-- Version mínima soportada por MAUI (.NET 8 / 9 requiere iOS 12+) -->
+		<key>MinimumOSVersion</key>
+		<string>12.0</string>
+
+		<!-- Nombre, versión, identificador -->
+		<key>CFBundleDisplayName</key>
+		<string>SIUGJ</string>
+
+		<key>CFBundleName</key>
+		<string>SIUGJ</string>
+
+		<key>CFBundleIdentifier</key>
+		<string>com.rama.SIUGJ</string>
+
+		<key>CFBundleVersion</key>
+		<string>1.0</string>
+
+		<key>CFBundleShortVersionString</key>
+		<string>1.0</string>
+
+		<!-- AppIcon -->
+		<key>XSAppIconAssets</key>
+		<string>Assets.xcassets/appicon.appiconset</string>
+
+		<!-- Pantalla de lanzamiento MAUI -->
+		<key>UILaunchStoryboardName</key>
+		<string>MauiSplash</string>
+
+		<!-- Permisos -->
+		<key>NSLocationWhenInUseUsageDescription</key>
+		<string>La aplicación utiliza su ubicación para mostrar información relevante cercana.</string>
+
+		<key>NSAppleMusicUsageDescription</key>
+		<string>Otorgar permisos para el acceso a la librería de música.</string>
+
+		<key>NSPhotoLibraryUsageDescription</key>
+		<string>Otorgar permisos para el acceso a la librería de fotos.</string>
+
+	</dict>
+</plist>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:SIUGJ.ViewModels" xmlns:model="clr-namespace:SIUGJ.Models"
+    x:Class="SIUGJ.Views.NotificationsPage"
+    Title="Alertas">
+    <ContentPage.Content>
+        <!--
+      x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
+      https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
+    -->
+    <RefreshView x:DataType="local:NotificationsViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+        <CollectionView x:Name="ItemsListView"
+                ItemsSource="{Binding ItemsView}"
+                SelectionMode="None">
+            <CollectionView.EmptyView>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">                        
+                        <Image HorizontalOptions="Center" VerticalOptions="Center" Source="tareas_vacio.png" />
+                        <Label x:Name="emptyLabel" HorizontalOptions="Center" MaxLines="2" VerticalOptions="Center" />
+                    </StackLayout>
+                </StackLayout>
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout HeightRequest="100" x:DataType="model:Notification" BackgroundColor="{Binding BackgroundColor}" >
+                        <Grid Padding="10" VerticalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="70"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" Grid.Column="0" Source="notification.png" HorizontalOptions="Start" VerticalOptions="Start" />
+                            <StackLayout  Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand">
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding tipoNotificacion}" TextColor="{DynamicResource ColorPrimario}" FontAttributes="Bold"  />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding fechaAsignacion}" TextColor="gray" />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding codigoUnicoProceso}" TextColor="{DynamicResource ColorNegro}" />
+                            </StackLayout>
+                        </Grid>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                NumberOfTapsRequired="1"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:NotificationsViewModel}}, Path=ItemTapped}"		
+                                CommandParameter="{Binding .}">
+                            </TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
+    </ContentPage.Content>
+</ContentPage>
+

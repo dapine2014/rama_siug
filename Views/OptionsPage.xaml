@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SIUGJ.Views.OptionsPage"
+    BackgroundImageSource="bg_fondologin.png"
+    Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <StackLayout VerticalOptions="Start" HorizontalOptions="Start" Margin="25,60,0,0">                
+                <Image  Source="logosiugj.png" WidthRequest="100" />
+            </StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand">                
+                <Label WidthRequest="200" MaxLines="2" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="Title" FontAttributes="Bold" Text="Bienvenido a la App del SIUGJ"/>
+            </StackLayout>
+            <StackLayout Margin="0,0,0,100" Padding="30" VerticalOptions="EndAndExpand">                
+                <Button Text="Ingresar" Command="{Binding LoginCommand}"/>
+                <Button BackgroundColor="Transparent" BorderColor="White" BorderWidth="1" Text="Registrarse" Command="{Binding RegisterCommand}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

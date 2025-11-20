@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SIUGJ.Views.NotificationDetailPage"
+    Title="Detalle de alerta">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="{Binding TipoNotificacion}" FontSize="Title" FontAttributes="Bold" TextColor="Black" />
+            <Grid Padding="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>                    
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Despacho}" TextColor="gray" />
+                <Label Grid.Row="1" Grid.Column="0" Text="{Binding FechaAsignacion}" TextColor="gray" />
+                <Label Grid.Row="2" Grid.Column="0" Text="{Binding CodigoUnicoProceso}" TextColor="gray" />
+                <Label Grid.Row="3" Grid.Column="0" Text="{Binding Demandante}" TextColor="gray" />
+                <Label Grid.Row="4" Grid.Column="0" Text="{Binding Demandado}" TextColor="gray" />
+                <Label Grid.Row="5" Grid.Column="0" Text="{Binding ContenidoMensaje}" TextColor="gray" TextType="Html" />
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Text="+ Gestionar" CornerRadius="7" Command="{Binding ManageNotificationCommand}" />
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
+             xmlns:viewmodels="clr-namespace:SIUGJ.ViewModels"
+             x:DataType="viewmodels:HeadquartersViewModel"
+             x:Class="SIUGJ.Views.Headquarters"
+             Title="Sedes Judiciales">
+    
+    <ContentPage.Resources>
+        <Style x:Key="CustomPickerStyle" TargetType="Picker">
+            <Setter Property="BackgroundColor" Value="#f7f9fc" />
+            <Setter Property="TextColor" Value="#2c3e50" />
+            <Setter Property="FontAttributes" Value="None" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="HeightRequest" Value="45" />
+            <Setter Property="Margin" Value="0,0,0,0" />
+            <Setter Property="TitleColor" Value="#5c6bc0" /> <!-- Color específico para el título -->
+        </Style>
+        
+        <Style x:Key="PickerFrameStyle" TargetType="Frame">
+            <Setter Property="BorderColor" Value="#d1d9e6" />
+            <Setter Property="HasShadow" Value="True" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Padding" Value="5,0,5,0" />
+            <Setter Property="Margin" Value="0,5,0,10" />
+        </Style>
+        
+        <Style x:Key="PickerLabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="#333333" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="Margin" Value="5,0,0,0" />
+        </Style>
+    </ContentPage.Resources>
+    
+    <StackLayout>
+        <StackLayout Padding="15" HorizontalOptions="FillAndExpand">
+            <Label Text="Filtros de búsqueda" FontSize="18" FontAttributes="Bold" TextColor="#333" Margin="0,0,0,10"/>
+            
+            <!-- Ciudad -->
+            <Frame Style="{StaticResource PickerFrameStyle}">
+                <Picker Style="{StaticResource CustomPickerStyle}" 
+                        HorizontalOptions="FillAndExpand" 
+                        x:Name="City" 
+                        Title="Ciudad"
+                        SelectedIndex="{Binding CitySelectedIndex, Mode=TwoWay}"
+                        ItemDisplayBinding="{Binding Label, Mode=TwoWay}"
+                        ItemsSource="{Binding CityItems, Mode=TwoWay}"
+                        SelectedIndexChanged="CityOnChange"/>
+            </Frame>
+            
+            <!-- Especialidad -->
+            
+            <Frame Style="{StaticResource PickerFrameStyle}">
+                <Picker Style="{StaticResource CustomPickerStyle}" 
+                        HorizontalOptions="FillAndExpand" 
+                        x:Name="Speciality" 
+                        Title="Especialidad"
+                        SelectedIndex="{Binding SpecialitySelectedIndex, Mode=TwoWay}"
+                        ItemsSource="{Binding SpecialityItems, Mode=TwoWay}"
+                        SelectedIndexChanged="SpecialityOnChange"/>
+            </Frame>
+        </StackLayout>
+        
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">            
+            <maps:Map x:Name="mapView"
+                      VerticalOptions="FillAndExpand"
+                      HorizontalOptions="Fill"
+                      MapType="Street"
+                      IsShowingUser="True" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

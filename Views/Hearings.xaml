@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:SIUGJ.Controls"
+             xmlns:viewmodels="clr-namespace:SIUGJ.ViewModels"
+             x:Class="SIUGJ.Views.Hearings"
+             x:Name="hearingsPage"
+             x:DataType="viewmodels:HearingViewModel"
+             Title="Audiencias">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{DynamicResource ColorFondo}" RowDefinitions="Auto,*" Padding="10">
+            <Frame Grid.Row="0"
+                   Padding="15"
+                   Margin="0,10,0,5"
+                   CornerRadius="12"
+                   HasShadow="True"
+                   BackgroundColor="{DynamicResource ColorBlanco}">
+                <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto" ColumnSpacing="10">
+                    <Button Grid.RowSpan="2"
+                            Text="&#xE5C4;"
+                            FontFamily="Material"
+                            WidthRequest="40"
+                            HeightRequest="40"
+                            CornerRadius="20"
+                            BackgroundColor="{DynamicResource ColorPrimario}"
+                            TextColor="White"
+                            Command="{Binding SelectPreviousDayCommand}" />
+                    <StackLayout Grid.Column="1" Spacing="2" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="{Binding SelectedDateText}"
+                               FontAttributes="Bold"
+                               FontSize="18"
+                               HorizontalTextAlignment="Center"
+                               TextColor="{DynamicResource ColorPrimario}" />
+                        <Button Text="Hoy"
+                                Padding="10,2"
+                                HorizontalOptions="Center"
+                                Command="{Binding SelectTodayCommand}"
+                                BackgroundColor="Transparent"
+                                TextColor="{DynamicResource ColorSecundario}" />
+                    </StackLayout>
+                    <Button Grid.RowSpan="2"
+                            Grid.Column="2"
+                            Text="&#xE5C8;"
+                            FontFamily="Material"
+                            WidthRequest="40"
+                            HeightRequest="40"
+                            CornerRadius="20"
+                            BackgroundColor="{DynamicResource ColorPrimario}"
+                            TextColor="White"
+                            Command="{Binding SelectNextDayCommand}" />
+                </Grid>
+            </Frame>
+
+            <RefreshView Grid.Row="1"
+                         Command="{Binding RefreshCommand}"
+                         IsRefreshing="{Binding IsBusy}">
+                <CollectionView ItemsSource="{Binding DayHearings}"
+                                SelectionMode="None"
+                                Margin="0,10,0,0">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Hearing" xmlns:models="clr-namespace:SIUGJ.Models">
+                            <controls:HearingEvent CalenderEventCommand="{Binding Source={x:Reference hearingsPage}, Path=BindingContext.EventSelectedCommand}" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    <CollectionView.EmptyView>
+                        <StackLayout Padding="20" Spacing="10" HorizontalOptions="Center" VerticalOptions="Center">
+                            <Image Source="tareas_vacio.png" WidthRequest="120" HeightRequest="120" />
+                            <Label Text="No hay audiencias registradas para esta fecha."
+                                   TextColor="{DynamicResource ColorPrimario}"
+                                   HorizontalTextAlignment="Center"
+                                   FontAttributes="Bold" />
+                        </StackLayout>
+                    </CollectionView.EmptyView>
+                </CollectionView>
+            </RefreshView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

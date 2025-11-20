@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell x:Class="SIUGJ.AppShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:SIUGJ.Views"
+       Title="SIUGJ"
+       Shell.NavBarIsVisible="True">
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="White" />
+                <Setter Property="Shell.ForegroundColor" Value="{DynamicResource ColorPrimario}" />
+                <Setter Property="Shell.TitleColor" Value="{DynamicResource ColorPrimario}" />
+                <Setter Property="Shell.DisabledColor" Value="{DynamicResource ColorTerciario}" />
+                <Setter Property="Shell.UnselectedColor" Value="{DynamicResource ColorSecundario}" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{DynamicResource ColorBlanco}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{DynamicResource ColorPrimario}" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{DynamicResource ColorSecundario}" />
+                <Setter Property="Shell.TabBarTitleColor" Value="{DynamicResource ColorPrimario}" />
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+            <Style x:Key="MenuStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{DynamicResource ColorBlanco}" />
+            </Style>
+            <Style Class="FlyoutItemLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            <Style Class="FlyoutItemIconStyle" TargetType="Image">
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+            <Style x:Key="InvalidEntryStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="Red" />
+            </Style>
+            <Style x:Key="ValidEntryStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="Green" />
+            </Style>
+            <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource ColorBlanco}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{DynamicResource ColorPrimario}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{DynamicResource ColorPrimario}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+            <Style Class="MenuItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{DynamicResource ColorPrimario}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="{DynamicResource ColorBlanco}" HeightRequest="200" VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="logo_header_siugj.png" HorizontalOptions="Center" VerticalOptions="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Route="inicio"
+                      Style="{StaticResource BaseStyle}"
+                      Title="Inicio"
+                      ContentTemplate="{DataTemplate local:HomePage}">
+            <ShellContent.Icon>
+                <FontImageSource FontFamily="Material" Color="{DynamicResource ColorPrimario}" Glyph="&#xe88a;" />
+            </ShellContent.Icon>
+        </ShellContent>
+        <Tab Title="Alertas"
+             Route="notifications"
+             Style="{StaticResource BaseStyle}">
+            <Tab.Icon>
+                <FontImageSource FontFamily="Material" Color="{DynamicResource ColorPrimario}" Glyph="&#xe7f4;" />
+            </Tab.Icon>
+            <ShellContent Route="no_readed"
+                          Style="{StaticResource BaseStyle}"
+                          Title="Activas"
+                          ClassId="0"
+                          ContentTemplate="{DataTemplate local:NotificationsPage}" />
+            <ShellContent Route="readed"
+                          Style="{StaticResource BaseStyle}"
+                          Title="Atendidas"
+                          ClassId="1"
+                          ContentTemplate="{DataTemplate local:NotificationsPage}" />
+            <ShellContent Route="all"
+                          Style="{StaticResource BaseStyle}"
+                          Title="Todas"
+                          ClassId="2"
+                          ContentTemplate="{DataTemplate local:NotificationsPage}" />
+        </Tab>
+        <ShellContent Route="hearings"
+                      Style="{StaticResource BaseStyle}"
+                      Title="Audiencias"
+                      ContentTemplate="{DataTemplate local:Hearings}">
+            <ShellContent.Icon>
+                <FontImageSource FontFamily="Material" Color="{DynamicResource ColorPrimario}" Glyph="&#xe04b;" />
+            </ShellContent.Icon>
+        </ShellContent>
+        <ShellContent Route="headquarters"
+                      Style="{StaticResource BaseStyle}"
+                      Title="Sedes"
+                      ContentTemplate="{DataTemplate local:Headquarters}">
+            <ShellContent.Icon>
+                <FontImageSource FontFamily="Material" Color="{DynamicResource ColorPrimario}" Glyph="&#xe0c8;" />
+            </ShellContent.Icon>
+        </ShellContent>
+    </FlyoutItem>
+
+    <ShellContent Route="LoginPage"
+                  Style="{StaticResource BaseStyle}"
+                  Title="Salir"
+                  ContentTemplate="{DataTemplate local:LoginPage}" />
+
+    <TabBar>
+        <ShellContent Route="LoginPage"
+                      ContentTemplate="{DataTemplate local:LoginPage}" />
+    </TabBar>
+</Shell>

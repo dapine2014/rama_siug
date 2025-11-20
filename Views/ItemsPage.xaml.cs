@@ -1,0 +1,33 @@
+﻿using System;
+using System.ComponentModel;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Xaml;
+
+using SIUGJ.Models;
+using SIUGJ.Views;
+using SIUGJ.ViewModels;
+
+namespace SIUGJ.Views
+{
+    public partial class ItemsPage : ContentPage
+    {
+        ItemsViewModel _viewModel;
+
+        public ItemsPage()
+        {
+            InitializeComponent();
+
+            BindingContext = _viewModel = new ItemsViewModel();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            _viewModel.OnAppearing();
+        }
+    }
+}

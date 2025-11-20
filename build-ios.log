@@ -1,0 +1,15 @@
+MSBuild version 17.8.43+f0cbb1397 for .NET
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Detected signing identity:
+          
+    Bundle Id: com.rama.SIUGJ
+    App Id: com.rama.SIUGJ
+  SIUGJ.MAUI -> /Users/alexanderpineda/Documents/SIUGJ.MAUI/bin/Debug/net8.0-ios/iossimulator-arm64/SIUGJ.MAUI.dll
+  Optimizing assemblies for size may change the behavior of the app. Be sure to test after publishing. See: https://aka.ms/dotnet-illink
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.57
