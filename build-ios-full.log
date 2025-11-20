@@ -1,0 +1,28 @@
+MSBuild version 17.8.43+f0cbb1397 for .NET
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Detected signing identity:
+          
+    Bundle Id: com.rama.SIUGJ
+    App Id: com.rama.SIUGJ
+CSC : warning CS9057: El ensamblado del analizador ”/Users/alexanderpineda/.nuget/packages/communitytoolkit.maui/9.0.0/analyzers/dotnet/cs/CommunityToolkit.Maui.Analyzers.dll” hace referencia a la versión ”4.9.0.0” del compilador, que es más reciente que la versión "4.8.0.0" que se está ejecutando actualmente. [/Users/alexanderpineda/Documents/SIUGJ.MAUI/SIUGJ.MAUI.csproj::TargetFramework=net8.0-ios]
+CSC : warning CS9057: El ensamblado del analizador ”/Users/alexanderpineda/.nuget/packages/communitytoolkit.maui/9.0.0/analyzers/dotnet/cs/CommunityToolkit.Maui.SourceGenerators.dll” hace referencia a la versión ”4.9.0.0” del compilador, que es más reciente que la versión "4.8.0.0" que se está ejecutando actualmente. [/Users/alexanderpineda/Documents/SIUGJ.MAUI/SIUGJ.MAUI.csproj::TargetFramework=net8.0-ios]
+/Users/alexanderpineda/Documents/SIUGJ.MAUI/Connected Services/WSMobileSIUGJ/Reference.cs(153,52): warning CS0108: 'ApplicationServicesPortTypeClient.CloseAsync()' oculta el miembro heredado 'ClientBase<ApplicationServicesPortType>.CloseAsync()'. Use la palabra clave new si su intención era ocultarlo. [/Users/alexanderpineda/Documents/SIUGJ.MAUI/SIUGJ.MAUI.csproj::TargetFramework=net8.0-ios]
+/Users/alexanderpineda/Documents/SIUGJ.MAUI/ViewModels/HeadquartersViewModel.cs(121,94): warning CS8625: No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL. [/Users/alexanderpineda/Documents/SIUGJ.MAUI/SIUGJ.MAUI.csproj::TargetFramework=net8.0-ios]
+/Users/alexanderpineda/Documents/SIUGJ.MAUI/ViewModels/ItemDetailViewModel.cs(14,42): warning CS0108: 'ItemDetailViewModel.DataStore' oculta el miembro heredado 'BaseViewModel.DataStore'. Use la palabra clave new si su intención era ocultarlo. [/Users/alexanderpineda/Documents/SIUGJ.MAUI/SIUGJ.MAUI.csproj::TargetFramework=net8.0-ios]
+/Users/alexanderpineda/Documents/SIUGJ.MAUI/ViewModels/NewItemViewModel.cs(14,42): warning CS0108: 'NewItemViewModel.DataStore' oculta el miembro heredado 'BaseViewModel.DataStore'. Use la palabra clave new si su intención era ocultarlo. [/Users/alexanderpineda/Documents/SIUGJ.MAUI/SIUGJ.MAUI.csproj::TargetFramework=net8.0-ios]
+/Users/alexanderpineda/Documents/SIUGJ.MAUI/ViewModels/LoginViewModel.cs(105,24): error CS0104: 'Task' es una referencia ambigua entre 'SIUGJ.Models.ServiceSIUGJ.Task' y 'System.Threading.Tasks.Task' [/Users/alexanderpineda/Documents/SIUGJ.MAUI/SIUGJ.MAUI.csproj::TargetFramework=net8.0-ios]
+
+Build FAILED.
+
+CSC : warning CS9057: El ensamblado del analizador ”/Users/alexanderpineda/.nuget/packages/communitytoolkit.maui/9.0.0/analyzers/dotnet/cs/CommunityToolkit.Maui.Analyzers.dll” hace referencia a la versión ”4.9.0.0” del compilador, que es más reciente que la versión "4.8.0.0" que se está ejecutando actualmente. [/Users/alexanderpineda/Documents/SIUGJ.MAUI/SIUGJ.MAUI.csproj::TargetFramework=net8.0-ios]
+CSC : warning CS9057: El ensamblado del analizador ”/Users/alexanderpineda/.nuget/packages/communitytoolkit.maui/9.0.0/analyzers/dotnet/cs/CommunityToolkit.Maui.SourceGenerators.dll” hace referencia a la versión ”4.9.0.0” del compilador, que es más reciente que la versión "4.8.0.0" que se está ejecutando actualmente. [/Users/alexanderpineda/Documents/SIUGJ.MAUI/SIUGJ.MAUI.csproj::TargetFramework=net8.0-ios]
+/Users/alexanderpineda/Documents/SIUGJ.MAUI/Connected Services/WSMobileSIUGJ/Reference.cs(153,52): warning CS0108: 'ApplicationServicesPortTypeClient.CloseAsync()' oculta el miembro heredado 'ClientBase<ApplicationServicesPortType>.CloseAsync()'. Use la palabra clave new si su intención era ocultarlo. [/Users/alexanderpineda/Documents/SIUGJ.MAUI/SIUGJ.MAUI.csproj::TargetFramework=net8.0-ios]
+/Users/alexanderpineda/Documents/SIUGJ.MAUI/ViewModels/HeadquartersViewModel.cs(121,94): warning CS8625: No se puede convertir un literal NULL en un tipo de referencia que no acepta valores NULL. [/Users/alexanderpineda/Documents/SIUGJ.MAUI/SIUGJ.MAUI.csproj::TargetFramework=net8.0-ios]
+/Users/alexanderpineda/Documents/SIUGJ.MAUI/ViewModels/ItemDetailViewModel.cs(14,42): warning CS0108: 'ItemDetailViewModel.DataStore' oculta el miembro heredado 'BaseViewModel.DataStore'. Use la palabra clave new si su intención era ocultarlo. [/Users/alexanderpineda/Documents/SIUGJ.MAUI/SIUGJ.MAUI.csproj::TargetFramework=net8.0-ios]
+/Users/alexanderpineda/Documents/SIUGJ.MAUI/ViewModels/NewItemViewModel.cs(14,42): warning CS0108: 'NewItemViewModel.DataStore' oculta el miembro heredado 'BaseViewModel.DataStore'. Use la palabra clave new si su intención era ocultarlo. [/Users/alexanderpineda/Documents/SIUGJ.MAUI/SIUGJ.MAUI.csproj::TargetFramework=net8.0-ios]
+/Users/alexanderpineda/Documents/SIUGJ.MAUI/ViewModels/LoginViewModel.cs(105,24): error CS0104: 'Task' es una referencia ambigua entre 'SIUGJ.Models.ServiceSIUGJ.Task' y 'System.Threading.Tasks.Task' [/Users/alexanderpineda/Documents/SIUGJ.MAUI/SIUGJ.MAUI.csproj::TargetFramework=net8.0-ios]
+    6 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:02.82

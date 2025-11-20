@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Application x:Class="SIUGJ.App"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:themes="clr-namespace:SIUGJ.Themes">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <themes:Default />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="InvalidEntryStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="Red" />
+            </Style>
+
+            <Style x:Key="ValidEntryStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="Green" />
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{DynamicResource ColorPrimario}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{DynamicResource ColorSecundario}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
