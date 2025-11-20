@@ -1,0 +1,126 @@
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="https://alambraqa8040.siugj.com/webServices" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="https://alambraqa8040.siugj.com/webServices">
+  <types>
+    <xsd:schema targetNamespace="https://alambraqa8040.siugj.com/webServices">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" schemaLocation="schemas.xmlsoap.org.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="autenticateUser">
+    <part name="urlAutentication" type="xsd:string"/>
+    <part name="token" type="xsd:string"/>
+  </message>
+  <message name="autenticateUserResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <message name="usersTask">
+    <part name="stringTokenAccess" type="xsd:string"/>
+    <part name="token" type="xsd:string"/>
+    <part name="taskStatus" type="xsd:string"/>
+  </message>
+  <message name="usersTaskResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <message name="usersAudiences">
+    <part name="stringTokenAccess" type="xsd:string"/>
+    <part name="token" type="xsd:string"/>
+    <part name="start" type="xsd:string"/>
+    <part name="end" type="xsd:string"/>
+    <part name="statusAudiences" type="xsd:string"/>
+  </message>
+  <message name="usersAudiencesResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <message name="usersGetCourts">
+    <part name="stringTokenAccess" type="xsd:string"/>
+    <part name="token" type="xsd:string"/>
+    <part name="state" type="xsd:string"/>
+    <part name="typeCout" type="xsd:string"/>
+  </message>
+  <message name="usersGetCourtsResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <message name="getCities">
+    <part name="stringTokenAccess" type="xsd:string"/>
+    <part name="token" type="xsd:string"/>
+    <part name="state" type="xsd:string"/>
+    <part name="typeCout" type="xsd:string"/>
+  </message>
+  <message name="getCitiesResponse">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <portType name="ApplicationServicesPortType">
+    <operation name="autenticateUser">
+      <input message="tns:autenticateUser"/>
+      <output message="tns:autenticateUserResponse"/>
+    </operation>
+    <operation name="usersTask">
+      <input message="tns:usersTask"/>
+      <output message="tns:usersTaskResponse"/>
+    </operation>
+    <operation name="usersAudiences">
+      <input message="tns:usersAudiences"/>
+      <output message="tns:usersAudiencesResponse"/>
+    </operation>
+    <operation name="usersGetCourts">
+      <input message="tns:usersGetCourts"/>
+      <output message="tns:usersGetCourtsResponse"/>
+    </operation>
+    <operation name="getCities">
+      <input message="tns:getCities"/>
+      <output message="tns:getCitiesResponse"/>
+    </operation>
+  </portType>
+  <binding name="ApplicationServicesBinding" type="tns:ApplicationServicesPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="autenticateUser">
+      <soap:operation soapAction="http://alambraqa8040.siugj.com/webServices/wsMovilServices.php/autenticateUser" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="https://alambraqa8040.siugj.com//webServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="https://alambraqa8040.siugj.com//webServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="usersTask">
+      <soap:operation soapAction="http://alambraqa8040.siugj.com/webServices/wsMovilServices.php/usersTask" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="https://alambraqa8040.siugj.com//webServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="https://alambraqa8040.siugj.com//webServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="usersAudiences">
+      <soap:operation soapAction="http://alambraqa8040.siugj.com/webServices/wsMovilServices.php/usersAudiences" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="https://alambraqa8040.siugj.com//webServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="https://alambraqa8040.siugj.com//webServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="usersGetCourts">
+      <soap:operation soapAction="http://alambraqa8040.siugj.com/webServices/wsMovilServices.php/usersGetCourts" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="https://alambraqa8040.siugj.com//webServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="https://alambraqa8040.siugj.com//webServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="getCities">
+      <soap:operation soapAction="http://alambraqa8040.siugj.com/webServices/wsMovilServices.php/getCities" style="rpc"/>
+      <input>
+        <soap:body use="encoded" namespace="https://alambraqa8040.siugj.com//webServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="https://alambraqa8040.siugj.com//webServices" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ApplicationServices">
+    <port name="ApplicationServicesPort" binding="tns:ApplicationServicesBinding">
+      <soap:address location="http://alambraqa8040.siugj.com/webServices/wsMovilServices.php"/>
+    </port>
+  </service>
+</definitions>
